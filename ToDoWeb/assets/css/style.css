@@ -1,0 +1,276 @@
+﻿body {
+    background-color: #bfbfbf;
+    padding: 1rem;
+}
+
+.todo-container {
+    background-color: #fff;
+    width: 100%;
+    min-height: calc(100vh - 2rem);
+    border-radius: .5rem;
+    padding: 1rem;
+}
+
+    .todo-container .category-box {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        min-height: calc(100vh - 4rem);
+        background-image: radial-gradient(73% 147%, #EADFDF 59%, #ECE2DF 100%), radial-gradient(91% 146%, rgba(255,255,255,0.50) 47%, rgba(0,0,0,0.50) 100%);
+        background-blend-mode: screen;
+        padding: 0 .5rem;
+        padding-bottom: .5rem;
+        border-radius: .5rem;
+    }
+
+        .todo-container .category-box .category-list {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+            .todo-container .category-box .category-list li {
+                padding: .5rem 0;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                cursor: pointer;
+            }
+
+                .todo-container .category-box .category-list li a {
+                    flex: 1 1 auto;
+                    text-decoration: none;
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    cursor: pointer;
+                }
+
+                    .todo-container .category-box .category-list li a i {
+                        width: 30px;
+                    }
+
+                    .todo-container .category-box .category-list li a.active i {
+                        color: red;
+                    }
+
+                        .todo-container .category-box .category-list li a.active i:before {
+                            content: "\f0a4";
+                        }
+
+                    .todo-container .category-box .category-list li a label {
+                        flex: 1 1 auto;
+                        padding-right: 1rem;
+                        display: block;
+                        cursor: pointer;
+                    }
+
+                    .todo-container .category-box .category-list li a input {
+                        flex: 1 1 auto;
+                        margin-right: .5rem;
+                        display: none;
+                    }
+
+                    .todo-container .category-box .category-list li a.editable label {
+                        display: none;
+                    }
+
+                    .todo-container .category-box .category-list li a.editable input {
+                        display: block;
+                    }
+
+                .todo-container .category-box .category-list li span {
+                    width: 20px;
+                    height: 20px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    font-size: 10px;
+                    border: 1px solid #fff;
+                    border-radius: 50%;
+                    background-color: #bfbfbf50;
+                    color: #000;
+                    font-weight: 600;
+                }
+
+                    .todo-container .category-box .category-list li span i {
+                        color: red;
+                        width: auto;
+                    }
+
+        .todo-container .category-box .category-add {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid #00a1ff;
+            border-radius: .25rem;
+            padding: .25rem;
+        }
+
+            .todo-container .category-box .category-add i {
+                height: 30px;
+                width: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .todo-container .category-box .category-add label {
+                height: 30px;
+                flex: 1 1 auto;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+                .todo-container .category-box .category-add label input {
+                    width: 100%;
+                    border: none;
+                    background-color: transparent;
+                    padding: 0 .5rem;
+                    outline: none;
+                    font-size: 14px;
+                }
+
+                    .todo-container .category-box .category-add label input::placeholder {
+                        color: #00000050;
+                        font-size: 12px;
+                    }
+
+            .todo-container .category-box .category-add:focus-within {
+                background-color: #fff;
+            }
+
+            .todo-container .category-box .category-add a {
+                height: 30px;
+                width: 30px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+    .todo-container .add-box {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+    }
+
+        .todo-container .add-box i {
+            font-size: 22px;
+        }
+
+        .todo-container .add-box input {
+            flex: 1;
+            border: none;
+            padding: 0 .5rem;
+            outline: none;
+        }
+
+        .todo-container .add-box a {
+            background-color: #00a1ff;
+            color: #fff;
+            border-radius: .5rem;
+            text-decoration: none;
+            padding: .25rem 1rem;
+        }
+
+    .todo-container .list-box {
+        margin-top: 1rem;
+    }
+
+        .todo-container .list-box .item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid #bfbfbf;
+            padding: 1rem 0;
+        }
+
+            .todo-container .list-box .item > input {
+                width: 100%;
+                display: none;
+            }
+
+            .todo-container .list-box .item.editable > input {
+                width: 100%;
+                display: block;
+            }
+
+            .todo-container .list-box .item.editable > label {
+                display: none;
+            }
+
+            .todo-container .list-box .item .custome-check {
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+                .todo-container .list-box .item .custome-check input {
+                    display: none;
+                }
+
+                .todo-container .list-box .item .custome-check i {
+                    margin-right: 1rem;
+                    border-radius: 50%;
+                    padding: 2px;
+                    color: #00a1ff;
+                    border: 2px solid #bfbfbf;
+                    width: 30px;
+                    height: 30px;
+                    text-align: center;
+                }
+
+                    .todo-container .list-box .item .custome-check i.uncheck-icon {
+                        display: block;
+                    }
+
+                    .todo-container .list-box .item .custome-check i.check-icon {
+                        display: none;
+                    }
+
+            .todo-container .list-box .item.active .custome-check i.uncheck-icon {
+                display: none;
+            }
+
+            .todo-container .list-box .item.active .custome-check i.check-icon {
+                display: block;
+            }
+
+            .todo-container .list-box .item .title {
+                flex: 1;
+            }
+
+            .todo-container .list-box .item.active .title {
+                text-decoration: line-through;
+                font-style: italic;
+            }
+
+            .todo-container .list-box .item .remove {
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+                .todo-container .list-box .item .remove i {
+                    margin-left: 1rem;
+                    border-radius: 50%;
+                    padding: 2px;
+                    color: #ff0000;
+                    border: 1px solid #bfbfbf;
+                    width: 30px;
+                    height: 30px;
+                    text-align: center;
+                }
+
+    .todo-container fieldset {
+    }
+
+        .todo-container fieldset legend {
+            background-color: #00a1ff;
+            color: #fff;
+            padding: 0.5rem;
+            border-radius: 0.5rem;
+            font-size: 16px;
+        }
+
+        .todo-container fieldset .done-task {
+        }
